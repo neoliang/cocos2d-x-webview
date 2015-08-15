@@ -16,12 +16,10 @@ To show the WebView in the game,you just need write 2 lines of codes.
 
 #usage
 
-1.ios
-    
+1. ios
     just copy  WebView.h , WebView.cpp and files in ios dir to your project
 
 2. android
-    
     to do
 
 
