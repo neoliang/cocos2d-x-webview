@@ -13,6 +13,7 @@ To show the WebView in the game,you just need write 2 lines of codes.
     a. setUrl: the the url you want to open in the WebView
 
     b.setContentSize: set the size of Visible Area of the WebView: default values are (300,400)
+3. working perfectly on any ResolutionPolicy
 
 #usage
 
