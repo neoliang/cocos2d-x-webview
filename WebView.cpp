@@ -12,17 +12,26 @@ using namespace cocos2d;
 WebView::WebView()
 {
     _webViewImp = createWebViewImp();
+    _oldRect = CCRectZero;
 }
 WebView::~WebView()
 {
     delete _webViewImp;
+}
+bool WebView::IsRectChanged(const cocos2d::CCRect& rc)
+{
+    return !rc.equals(_oldRect);
 }
 void WebView::draw()
 {
     CCNode::draw();
     CCRect rect = CCRectMake(0, 0, this->getContentSize().width,this->getContentSize().height);
     rect = CCRectApplyAffineTransform(rect, this->nodeToWorldTransform());
-    _webViewImp->updateContent(rect);
+    if (IsRectChanged(rect)) {
+        _webViewImp->updateContent(rect);
+        _oldRect = rect;
+    }
+    
 }
 WebView* WebView::create()
 {

@@ -24,7 +24,9 @@ class WebView : public cocos2d::CCNode{//tolua_export
     
 private:
     WebViewImp* _webViewImp;
+    cocos2d::CCRect _oldRect;
 private:
+    bool IsRectChanged(const cocos2d::CCRect& rc);
     void draw();
     WebView();
 public:
