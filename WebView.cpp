@@ -27,5 +27,6 @@ void WebView::draw()
 WebView* WebView::create()
 {
     WebView* view = new WebView();
+    view->setContentSize(CCSizeMake(300, 400));
     return (WebView*)(view->autorelease());
 }
